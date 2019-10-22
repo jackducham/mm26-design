@@ -1,15 +1,18 @@
-name: Hello
+name: Set Tags
 
-on: [push]
+on:
+  issues:
+    types: [opened]
 
 jobs:
-  greet:
+  label:
 
     runs-on: ubuntu-latest
     
     steps:
-      - id: hello_world
-        name: Hello World
+      - id: label
+        name: Add Label
         uses: jackducham/mm26-design/.github/actions@master
         with:
-          who-to-greet: 'jack'
+          myToken: ${{ secrets.GITHUB_TOKEN }}
+          label: 'Team: Design'

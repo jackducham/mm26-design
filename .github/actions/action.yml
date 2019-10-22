@@ -1,13 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Add Label'
+description: 'Add a label to an issue'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  myToken:
+    description: 'GitHub token'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we we greeted you'
+  label:  # id of input
+    description: 'Label name'
+    required: true
+    default: 'Status: Blocked'
 runs:
   using: 'node12'
   main: 'index.js'
