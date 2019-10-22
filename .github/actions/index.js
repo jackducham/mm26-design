@@ -21,8 +21,8 @@ async function run() {
 		const label = core.getInput('label');
 
 		octokit.issues.addLabels({
-			owner: github.context.payload.repository.owner,
-			repo: github.context.payload.repository,
+			owner: github.context.payload.repository.owner.login,
+			repo: github.context.payload.repository.name,
 			issue_number: github.context.payload.issue.number,
 			labels: label
 		}).then(function () {
