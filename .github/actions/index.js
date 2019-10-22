@@ -24,7 +24,7 @@ async function run() {
 			owner: github.context.payload.repository.owner.login,
 			repo: github.context.payload.repository.name,
 			issue_number: github.context.payload.issue.number,
-			labels: label
+			labels: [label]
 		}).then(function () {
 			console.log("Promise Resolved");
 		}).catch(function (rejection) {
