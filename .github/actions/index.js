@@ -27,8 +27,8 @@ async function run() {
 			labels: label
 		}).then(function () {
 			console.log("Promise Resolved");
-		}).catch(function () {
-			console.log("Promise Rejected");
+		}).catch(function (rejection) {
+			console.log(rejection);
 		});
 	}
 	catch (error) {
