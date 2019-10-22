@@ -29,7 +29,7 @@ async function run() {
 			console.log(rejection);
 		});
 
-		octokit.project.createCard({
+		octokit.projects.createCard({
 			column_id: 6571174,
 			content_id: github.context.payload.issue.number,
 			content_type: "Issue"
