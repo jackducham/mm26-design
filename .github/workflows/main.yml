@@ -10,6 +10,6 @@ jobs:
     steps:
       - id: hello_world
         name: Hello World
-        uses: jackducham/mm26-design/.github/actions/action
+        uses: jackducham/mm26-design/.github/actions/action@master
         with:
           who-to-greet: 'jack'
