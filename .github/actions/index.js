@@ -20,7 +20,7 @@ async function run() {
 		const octokit = new github.GitHub(myToken);
 		const label = core.getInput('label');
 
-		octokit.issues.addLabels({
+		await octokit.issues.addLabels({
 			owner: github.context.payload.repository.owner,
 			repo: github.context.payload.repository,
 			issue_number: github.context.payload.issue.number,
