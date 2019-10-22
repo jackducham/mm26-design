@@ -4,6 +4,9 @@ inputs:
   myToken:
     description: 'GitHub token'
     required: true
+  pToken:
+    description: 'Project token'
+    required: true
   label:  # id of input
     description: 'Label name'
     required: true

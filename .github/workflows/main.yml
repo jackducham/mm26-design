@@ -15,4 +15,5 @@ jobs:
         uses: jackducham/mm26-design/.github/actions@master
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
+          pToken: ${{ secrets.PROJECT_TOKEN }}
           label: 'Team: Design'

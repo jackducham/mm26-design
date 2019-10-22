@@ -18,6 +18,7 @@ async function run() {
 	try {
 		const myToken = core.getInput('myToken');
 		const octokit = new github.GitHub(myToken);
+		const octokit_p = new github.GitHub(pToken);
 		const label = core.getInput('label');
 
 		octokit.issues.addLabels({
@@ -29,7 +30,7 @@ async function run() {
 			console.log(rejection);
 		});
 
-		octokit.projects.createCard({
+		octokit_p.projects.createCard({
 			column_id: 6571174,
 			content_id: github.context.payload.issue.number,
 			content_type: "Issue"
