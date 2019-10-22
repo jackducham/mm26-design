@@ -2,18 +2,15 @@ name: Set Tags
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened]
 
 jobs:
-  label:
+  add-team-label:
 
     runs-on: ubuntu-latest
     
     steps:
-      - id: label
-        name: Add Label
-        uses: jackducham/mm26-design/.github/actions@master
+      - name: Add Team Label
+        uses: jackducham/mm26-automation/add-team-label@master
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
-          pToken: ${{ secrets.PROJECT_TOKEN }}
-          label: 'Team: Design'
