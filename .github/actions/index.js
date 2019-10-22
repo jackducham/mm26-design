@@ -17,6 +17,7 @@ const github = require('@actions/github');
 async function run() {
 	try {
 		const myToken = core.getInput('myToken');
+		const pToken = core.getInput('pToken');
 		const octokit = new github.GitHub(myToken);
 		const octokit_p = new github.GitHub(pToken);
 		const label = core.getInput('label');
