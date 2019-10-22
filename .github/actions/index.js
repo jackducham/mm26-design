@@ -15,7 +15,7 @@ const github = require('@actions/github');
 // }
 
 async function run() {
-//	try {
+	try {
 		const myToken = core.getInput('myToken');
 		const octokit = new github.GitHub(myToken);
 		const label = core.getInput('label');
@@ -25,11 +25,13 @@ async function run() {
 			repo: github.context.payload.repository,
 			issue_number: github.context.payload.issue.number,
 			labels: label
-		})
-//	}
-//	catch (error) {
-//		core.setFailed(error.message);
-//	}
+		}).catch(error) {
+			core.setFailed(error.message);
+		}
+	}
+	catch (error) {
+		core.setFailed(error.message);
+	}
 }
 
 run()
