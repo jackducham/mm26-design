@@ -33,7 +33,7 @@ async function run() {
 
 		octokit_p.projects.createCard({
 			column_id: 6571174,
-			content_id: github.context.payload.issue.number,
+			content_id: github.context.payload.issue.id,
 			content_type: "Issue"
 		}).catch(function (rejection) {
 			console.log(rejection);
