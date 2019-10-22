@@ -11,6 +11,6 @@ jobs:
     
     steps:
       - name: Add Team Label
-        uses: jackducham/mm26-automation/add-team-label@master
+        uses: jackducham/mm26-automation@master
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
