@@ -1,7 +1,0 @@
-name: "label_action"
-author: "jackducham"
-description: "labels an issue with the proper team and adds it to the MM26 project"
-
-runs:
-  using: "node12"
-  main: "label.js"
