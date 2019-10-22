@@ -1,4 +1,4 @@
-name: Set Tags
+name: Add new issues to the project board
 
 on:
   issues:
