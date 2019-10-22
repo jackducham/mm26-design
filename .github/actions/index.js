@@ -29,7 +29,6 @@ async function run() {
 			console.log(rejection);
 		});
 
-		https://github.com/users/jackducham/projects/1#column-6571174
 		octokit.project.createCard({
 			column_id: 6571174,
 			content_id: github.context.payload.issue.number,
