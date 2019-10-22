@@ -19,8 +19,13 @@ async function run() {
 		const myToken = core.getInput('myToken');
 		const octokit = new github.GitHub(myToken);
 		const label = core.getInput('label');
-		const payload = JSON.stringify(github.context.payload, undefined, 2);
-		console.log(`The event payload: ${payload}`);
+		
+		octokit.issues.addLabels({
+			github.context.payload.owner,
+			github.context.payload.repository,
+			github.context.payload.issue.number,
+			label
+		});
 	}
 	catch (error) {
 		core.setFailed(error.message);
