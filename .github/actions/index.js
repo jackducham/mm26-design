@@ -25,8 +25,15 @@ async function run() {
 			repo: github.context.payload.repository.name,
 			issue_number: github.context.payload.issue.number,
 			labels: [label]
-		}).then(function () {
-			console.log("Promise Resolved");
+		}).catch(function (rejection) {
+			console.log(rejection);
+		});
+
+		https://github.com/users/jackducham/projects/1#column-6571174
+		octokit.project.createCard({
+			column_id: 6571174,
+			content_id: github.context.payload.issue.number,
+			content_type: "Issue"
 		}).catch(function (rejection) {
 			console.log(rejection);
 		});
