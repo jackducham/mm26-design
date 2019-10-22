@@ -25,9 +25,11 @@ async function run() {
 			repo: github.context.payload.repository,
 			issue_number: github.context.payload.issue.number,
 			labels: label
-		}).catch(error) {
-			core.setFailed(error.message);
-		}
+		}).then(function () {
+			console.log("Promise Resolved");
+		}).catch(function () {
+			console.log("Promise Rejected");
+		});
 	}
 	catch (error) {
 		core.setFailed(error.message);
